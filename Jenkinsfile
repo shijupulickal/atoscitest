@@ -11,7 +11,7 @@ pipeline {
 		NEXUS_USER = 'admin'
 		NEXUS_PASS = 'admin123'
 		RELEASE_REPO = 'atostest-release'
-		CENTRAL_REPO = 'vpro-maven-central'
+		CENTRAL_REPO = 'atostest-proxymvn'
 		NEXUSIP = '34.125.14.127'
 		NEXUSPORT = '8081'
 		NEXUS_GRP_REPO = 'atostest-group'
