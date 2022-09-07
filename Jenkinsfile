@@ -6,7 +6,7 @@ pipeline {
     }
 
     
-   environment {
+    environment {
         SNAP_REPO = 'atostest-snap'
 		NEXUS_USER = 'admin'
 		NEXUS_PASS = 'admin123'
@@ -17,11 +17,17 @@ pipeline {
 		NEXUS_GRP_REPO = 'atostest-group'
         NEXUS_LOGIN = 'nexusloginid-1'
     }
-    stages{
-        stage ('build')
-           steps {
+
+
+    stages {
+       stage ('build'){
+
+        steps {
               sh 'mvn -s settings.xml -DskipTests install'
            }
             
            } 
     }
+}
+
+#
