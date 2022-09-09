@@ -4,30 +4,24 @@ pipeline {
         maven "MAVEN3"
         jdk "OracleJDK8"
     }
-
     
     environment {
-        SNAP_REPO = 'atostest-snap'
+        SNAP_REPO = 'vprofile-snapshot'
 		NEXUS_USER = 'admin'
 		NEXUS_PASS = 'admin'
-		RELEASE_REPO = 'atostest-release'
-		CENTRAL_REPO = 'atostest-proxymvn'
+		RELEASE_REPO = 'vprofile-release'
+		CENTRAL_REPO = 'vpro-maven-central'
 		NEXUSIP = '10.182.0.11'
 		NEXUSPORT = '8081'
-		NEXUS_GRP_REPO = 'atostest-group'
-        NEXUS_LOGIN = 'nexusloginid-1'
+		NEXUS_GRP_REPO = 'vpro-maven-group'
+        NEXUS_LOGIN = 'nexuslogin'
     }
-
 
     stages {
-       stage ('build'){
-
-        steps {
-              sh 'mvn -s settings.xml -DskipTests install'
-           }
-            
-           } 
+        stage('Build'){
+            steps {
+                sh 'mvn -s settings.xml -DskipTests install'
+            }
+        }
     }
 }
-
-
