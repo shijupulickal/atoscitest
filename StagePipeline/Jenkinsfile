@@ -23,6 +23,7 @@ pipeline {
         SONARSCANNER = 'sonarscanner'
         registryCredential = 'ecr:us-east-1:awscre01'
         appRegistry = '393064531836.dkr.ecr.us-east-1.amazonaws.com/atostest01'
+        name = 'Atos'
         vprofileRegistry = "https://393064531836.dkr.ecr.us-east-1.amazonaws.com"
     }
 
@@ -117,7 +118,7 @@ pipeline {
      stage('Build App Image') {
             steps {
                 script {
-                    dockerImage = docker.build( atosci + ":$BUILD_NUMBER", "./Docker-files/app/multistage/")
+                    dockerImage = docker.build( name + ":$BUILD_NUMBER", "./Docker-files/app/multistage/")
                 }
             }
         }
