@@ -136,24 +136,6 @@ pipeline {
         }
 
 
-
-
-    stage('Login') {
-
-         steps {
-             sh 'docker login -u docker_user -p docker_pwd'
-
-              }
-
-        }
-
-	     
-   
-	     
-
-   
-
-
     }
 
 
